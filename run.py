@@ -36,11 +36,13 @@ random ship for the purpose of tesing
 the input method when it is added.
 """
 
+
 def random_row_coordinate(board):
-    return randint(0, len(board) -1)
+    return randint(0, len(board)-1)
+
 
 def random_column_coordinate(board):
-    return randint(0, len(board) -1)
+    return randint(0, len(board)-1)
 
 random_row_coordinate(board)
 random_column_coordinate(board)
