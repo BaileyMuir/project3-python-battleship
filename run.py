@@ -49,15 +49,6 @@ random_row_coordinate(board)
 random_column_coordinate(board)
 
 """
-Below are two variable both of which
-allow the user to make there guess 
-using input to avoid errors i will add
-custom error messages in future.
-"""
-row_guess = input("Guess the row:  \n")
-column_guess = input("Guess the column:  \n")
-
-"""
 Below is a variable holding the.
 random_row_coordinate data to display
 the location of the ship when printed.
@@ -70,3 +61,28 @@ random_ship = random_row_coordinate(board)
 
 print(random_ship)
 print(random_column_coordinate(board))
+
+"""
+This for loop goes through a range of 100
+hundred as there are 100 potential places
+for the ship to appear in, As a result
+i've set an attemp counter in future
+this will also check if a guess has
+already been made and when they have
+all been made or the player has been
+beaten end the game.
+
+For testing its been reduced to ten for now.
+"""
+
+for attempt in range(10):
+    print("attempt", attempt + 1)
+
+    """
+    Below are two variable both of which
+    allow the user to make there guess 
+    using input to avoid errors i will add
+    custom error messages in future.
+    """
+    row_guess = input("Guess the row:  \n")
+    column_guess = input("Guess the column:  \n")
