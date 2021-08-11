@@ -21,8 +21,8 @@ board variable fromshowing up when
 the grid is printed.
 """
 
-for x in range(0, 2):
-    board.append(["~"] * 2)
+for x in range(0, 10):
+    board.append(["~"] * 10)
 
 
 for x in board:
@@ -42,7 +42,7 @@ def random_row_coordinate(board):
 
 
 def random_column_coordinate(board):
-    return randint(0, len(board[1]) -1)
+    return randint(0, len(board) -1)
 
 
 random_row_coordinate(board)
@@ -85,6 +85,7 @@ for attempt in range(10):
     using input to avoid errors i will add
     custom error messages in future.
     """
+    print(board)
     row_guess = input("Guess the row:  \n")
     column_guess = input("Guess the column:  \n")
 
