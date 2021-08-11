@@ -35,16 +35,16 @@ the input method when it is added.
 """
 
 
-def random_row_coordinate(grid):
-    return round(randint(0, len(grid)-1))
+def random_row_coordinate(board):
+    return round(randint(0, len(board)-1))
 
 
-def random_column_coordinate(grid):
-    return randint(0, len(grid)-1)
+def random_column_coordinate(board):
+    return randint(0, len(board)-1)
 
 
-random_row_coordinate(grid)
-random_column_coordinate(grid)
+random_row_coordinate(board)
+random_column_coordinate(board)
 
 """
 Below is a variable holding the.
@@ -55,8 +55,8 @@ The same for the print
 random_column_coordinate(board)
 as it will also show the location.
 """
-c_ship_row = random_row_coordinate(grid)
-c_ship_column = random_column_coordinate(grid)
+c_ship_row = random_row_coordinate(board)
+c_ship_column = random_column_coordinate(board)
 
 """
 This for loop goes through a range of 100
@@ -72,7 +72,7 @@ For testing its been reduced to ten for now.
 """
 
 for attempt in range(10):
-    print(board(grid))
+    print(grid)
     print("attempt", attempt + 1)
 
     """
