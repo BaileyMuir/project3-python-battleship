@@ -27,8 +27,6 @@ for x in range(0, 10):
 
 for x in board:
     grid = (" ".join(x))
-    print(grid)
-
 
 """
 the functions below should place a
@@ -37,31 +35,28 @@ the input method when it is added.
 """
 
 
-def random_row_coordinate(board):
-    return round(randint(0, len(board) -1))
+def random_row_coordinate(grid):
+    return round(randint(0, len(grid)-1))
 
 
-def random_column_coordinate(board):
-    return randint(0, len(board) -1)
+def random_column_coordinate(grid):
+    return randint(0, len(grid)-1)
 
 
-random_row_coordinate(board)
-random_column_coordinate(board)
+random_row_coordinate(grid)
+random_column_coordinate(grid)
 
 """
 Below is a variable holding the.
 random_row_coordinate data to display
 the location of the ship when printed.
 
-The same for the print 
+The same for the print
 random_column_coordinate(board)
 as it will also show the location.
 """
-computer_ship_row = random_row_coordinate(board)
-computer_ship_column = random_column_coordinate(board)
-
-print(computer_ship_row)
-print(computer_ship_column)
+c_ship_row = random_row_coordinate(grid)
+c_ship_column = random_column_coordinate(grid)
 
 """
 This for loop goes through a range of 100
@@ -77,19 +72,20 @@ For testing its been reduced to ten for now.
 """
 
 for attempt in range(10):
+    print(board(grid))
     print("attempt", attempt + 1)
 
     """
     Below are two variable both of which
-    allow the user to make there guess 
+    allow the user to make there guess
     using input to avoid errors i will add
     custom error messages in future.
     """
-    print(board)
+
     row_guess = input("Guess the row:  \n")
     column_guess = input("Guess the column:  \n")
 
-    if (row_guess == computer_ship_row) and (column_guess == computer_ship_column):
+    if row_guess == c_ship_row and column_guess == c_ship_column:
         print("You sunk my BattleShip.\n")
     else:
         print("You, missed batter luch next time.\n")
