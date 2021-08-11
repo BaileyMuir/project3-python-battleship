@@ -27,6 +27,7 @@ for x in range(0, 10):
 
 for x in board:
     grid = (" ".join(x))
+    print(grid)
 
 """
 the functions below should place a
@@ -40,7 +41,7 @@ def random_row_coordinate(board):
 
 
 def random_column_coordinate(board):
-    return randint(0, len(board)-1)
+    return randint(0, len(board[0])-1)
 
 
 random_row_coordinate(board)
@@ -72,7 +73,6 @@ For testing its been reduced to ten for now.
 """
 
 for attempt in range(10):
-    print(grid)
     print("attempt", attempt + 1)
 
     """
@@ -81,11 +81,12 @@ for attempt in range(10):
     using input to avoid errors i will add
     custom error messages in future.
     """
-
+    print(c_ship_row)
+    print(c_ship_column)
     row_guess = input("Guess the row:  \n")
     column_guess = input("Guess the column:  \n")
 
-    if row_guess == c_ship_row and column_guess == c_ship_column:
+    if int(row_guess) == int(c_ship_row) and int(column_guess) == int(c_ship_column):
         print("You sunk my BattleShip.\n")
     else:
         print("You, missed batter luch next time.\n")
