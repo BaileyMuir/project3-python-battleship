@@ -21,8 +21,8 @@ board variable fromshowing up when
 the grid is printed.
 """
 
-for x in range(0, 10):
-    board.append(["~"] * 10)
+for x in range(0, 2):
+    board.append(["~"] * 2)
 
 
 for x in board:
@@ -42,7 +42,7 @@ def random_row_coordinate(board):
 
 
 def random_column_coordinate(board):
-    return randint(0, len(board[0]) -1)
+    return randint(0, len(board[1]) -1)
 
 
 random_row_coordinate(board)
@@ -57,10 +57,11 @@ The same for the print
 random_column_coordinate(board)
 as it will also show the location.
 """
-random_ship = random_row_coordinate(board)
+computer_ship_row = random_row_coordinate(board)
+computer_ship_column = random_column_coordinate(board)
 
-print(random_ship)
-print(random_column_coordinate(board))
+print(computer_ship_row)
+print(computer_ship_column)
 
 """
 This for loop goes through a range of 100
@@ -86,3 +87,8 @@ for attempt in range(10):
     """
     row_guess = input("Guess the row:  \n")
     column_guess = input("Guess the column:  \n")
+
+    if (row_guess == computer_ship_row) and (column_guess == computer_ship_column):
+        print("You sunk my BattleShip.\n")
+    else:
+        print("You, missed batter luch next time.\n")
