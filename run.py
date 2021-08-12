@@ -57,7 +57,7 @@ random_column_coordinate(board)
 as it will also show the location.
 """
 c_ship_row = random_row_coordinate(board)
-c_ship_column = random_column_coordinate(board)
+c_ship_col = random_column_coordinate(board)
 
 """
 This for loop goes through a range of 100
@@ -82,13 +82,13 @@ for attempt in range(10):
     custom error messages in future.
     """
     print(c_ship_row)
-    print(c_ship_column)
+    print(c_ship_col)
     print("Computers board")
     append_board(board)
     row_guess = input("Guess the row:  \n")
-    column_guess = input("Guess the column:  \n")
+    col_guess = input("Guess the column:  \n")
 
-    if int(row_guess) == int(c_ship_row) and int(column_guess) == int(c_ship_column):
+    if int(row_guess) == int(c_ship_row) and int(col_guess) == int(c_ship_col):
         print("You sunk my BattleShip.\n")
     else:
         print("You, missed batter luch next time.\n")
