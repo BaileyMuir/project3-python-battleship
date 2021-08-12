@@ -91,5 +91,6 @@ for attempt in range(10):
 
     if int(row_guess) == int(c_ship_row) and int(col_guess) == int(c_ship_col):
         print("You sunk my BattleShip.\n")
+        break
     else:
         print("You, missed batter luch next time.\n")
