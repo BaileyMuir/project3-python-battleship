@@ -83,7 +83,8 @@ for attempt in range(10):
     """
     print(c_ship_row)
     print(c_ship_column)
-    print_board(board)
+    print("Computers board")
+    append_board(board)
     row_guess = input("Guess the row:  \n")
     column_guess = input("Guess the column:  \n")
 
