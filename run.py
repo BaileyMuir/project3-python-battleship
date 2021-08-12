@@ -25,9 +25,9 @@ for x in range(0, 10):
     board.append(["~"] * 10)
 
 
-for x in board:
-    grid = (" ".join(x))
-    print(grid)
+def append_board(board):
+    for grid in board:
+        print(" ".join(grid))
 
 """
 the functions below should place a
@@ -83,6 +83,7 @@ for attempt in range(10):
     """
     print(c_ship_row)
     print(c_ship_column)
+    print_board(board)
     row_guess = input("Guess the row:  \n")
     column_guess = input("Guess the column:  \n")
 
