@@ -87,6 +87,7 @@ for attempt in range(10):
     append_board(board)
     row_guess = input("Guess the row:  \n")
     col_guess = input("Guess the column:  \n")
+    print(f"Coordinates are ({row_guess},{col_guess}) Fire at will!")
 
     if int(row_guess) == int(c_ship_row) and int(col_guess) == int(c_ship_col):
         print("You sunk my BattleShip.\n")
