@@ -72,25 +72,28 @@ beaten end the game.
 For testing its been reduced to ten for now.
 """
 
-for attempt in range(10):
-    print("attempt", attempt + 1)
+def main(board,c_ship_col,c_ship_row,append_board):
+    for attempt in range(10):
+        print("attempt", attempt + 1)
 
-    """
-    Below are two variable both of which
-    allow the user to make there guess
-    using input to avoid errors i will add
-    custom error messages in future.
-    """
-    print(c_ship_row)
-    print(c_ship_col)
-    print("Computers board")
-    append_board(board)
-    row_guess = input("Guess the row:  \n")
-    col_guess = input("Guess the column:  \n")
-    print(f"Coordinates are ({row_guess},{col_guess}) Fire at will!")
+        """
+        Below are two variable both of which
+        allow the user to make there guess
+        using input to avoid errors i will add
+        custom error messages in future.
+        """
+        print(c_ship_row)
+        print(c_ship_col)
+        print("Computers board")
+        append_board(board)
+        row_guess = input("Guess the row:  \n")
+        col_guess = input("Guess the column:  \n")
+        print(f"Coordinates are ({row_guess},{col_guess}) Fire at will!")
 
-    if int(row_guess) == int(c_ship_row) and int(col_guess) == int(c_ship_col):
-        print("You sunk my BattleShip.\n")
-        break
-    else:
-        print("You, missed batter luch next time.\n")
+        if int(row_guess) == int(c_ship_row) and int(col_guess) == int(c_ship_col):
+            print("You sunk my BattleShip.\n")
+            break
+        else:
+            print("You, missed batter luch next time.\n")
+
+main(board,c_ship_col,c_ship_row,append_board)
