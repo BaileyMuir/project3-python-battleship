@@ -94,7 +94,10 @@ def main(board,c_ship_col,c_ship_row,append_board):
             print("You sunk my BattleShip.\n")
             board[row_guess][col_guess] = "!"
         else:
-            print("You missed, batter luch next time.\n")
-            board[row_guess][col_guess] = "x"
+            if (row_guess < 0 or row_guess > 9) or (col_guess < 0 or col_guess >  9):
+                print("Captain, thats not on our radar.")
+            else:
+                print("You missed, batter luch next time.\n")
+                board[row_guess][col_guess] = "x"
 
 main(board,c_ship_col,c_ship_row,append_board)
