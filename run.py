@@ -86,14 +86,15 @@ def main(board,c_ship_col,c_ship_row,append_board):
         print(c_ship_col)
         print("Computers board")
         append_board(board)
-        row_guess = input("Guess the row:  \n")
-        col_guess = input("Guess the column:  \n")
+        row_guess = int(input("Guess the row:  \n"))
+        col_guess = int(input("Guess the column:  \n"))
         print(f"Coordinates are ({row_guess},{col_guess}) Fire at will!")
 
-        if int(row_guess) == int(c_ship_row) and int(col_guess) == int(c_ship_col):
+        if row_guess == c_ship_row and col_guess == c_ship_col:
             print("You sunk my BattleShip.\n")
-            break
+            board[row_guess][col_guess] = "!"
         else:
-            print("You, missed batter luch next time.\n")
+            print("You missed, batter luch next time.\n")
+            board[row_guess][col_guess] = "x"
 
 main(board,c_ship_col,c_ship_row,append_board)
