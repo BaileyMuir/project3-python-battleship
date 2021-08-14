@@ -67,9 +67,11 @@ Create grid for player
 for i in range(10):
     player_board.append(["~"] * 10)
 
+
 def append_p_board(player_board):
     for grids in player_board:
         print(" ".join(grids))
+
 
 """
 This for loop goes through a range of 100
@@ -84,7 +86,8 @@ beaten end the game.
 For testing its been reduced to ten for now.
 """
 
-def main(board,c_ship_col,c_ship_row,append_board,player_board):
+
+def main(board, c_ship_col, c_ship_row, append_board, player_board):
 
     p_ship_row = int(input("pick ship row:  \n"))
     p_ship_col = int(input("pick ship column:  \n"))
@@ -95,7 +98,7 @@ def main(board,c_ship_col,c_ship_row,append_board,player_board):
         p_ship_col = int(input("pick ship column between (0-9):  \n"))
     else:
         player_board[p_ship_row][p_ship_col] = "#"
-        
+
     for attempt in range(10):
         print("attempt", attempt + 1)
         """
@@ -106,7 +109,7 @@ def main(board,c_ship_col,c_ship_row,append_board,player_board):
         """
         print(c_ship_row)
         print(c_ship_col)
-            
+
         print(p_ship_row)
         print(p_ship_col)
         # print("Computers board")
@@ -116,17 +119,18 @@ def main(board,c_ship_col,c_ship_row,append_board,player_board):
         row_guess = int(input("Guess the row:  \n"))
         col_guess = int(input("Guess the column:  \n"))
         print(f"Coordinates are ({row_guess},{col_guess}) Fire at will!")
-        
+
         def c_row_coordinate(player_board):
             return round(randint(0, len(board)-1))
+
         def c_column_coordinate(player_board):
             return randint(0, len(board[0])-1)
         c_row_coordinate(player_board)
         c_column_coordinate(player_board)
-        
+
         com_guess_row = c_row_coordinate(player_board)
         com_guess_col = c_column_coordinate(player_board)
-        
+
         if (row_guess < 0 or row_guess > 9) or (col_guess < 0 or col_guess > 9):
                 print("Thats not on the radar captain.")
         elif (board[row_guess][col_guess] == "!"):
@@ -142,7 +146,7 @@ def main(board,c_ship_col,c_ship_row,append_board,player_board):
             else:
                 print ("sector was empty.")
                 board[row_guess][col_guess] = "X"
-                
+
         if com_guess_row == p_ship_row and com_guess_col == p_ship_col:
             player_board[com_guess_row][com_guess_col] = "!"
             print("Computer destroyed one of your vessles Captain.")
@@ -156,4 +160,4 @@ def main(board,c_ship_col,c_ship_row,append_board,player_board):
         append_p_board(player_board)
 
 
-main(board,c_ship_col,c_ship_row,append_board,player_board)
+main(board, c_ship_col, c_ship_row, append_board, player_board)
