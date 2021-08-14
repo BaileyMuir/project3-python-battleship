@@ -85,6 +85,10 @@ For testing its been reduced to ten for now.
 """
 
 def main(board,c_ship_col,c_ship_row,append_board,player_board):
+
+    p_ship_row = int(input("Pick ship row:  \n"))
+    p_ship_col = int(input("Pick ship row:  \n"))
+
     for attempt in range(10):
         print("attempt", attempt + 1)
 
@@ -96,6 +100,12 @@ def main(board,c_ship_col,c_ship_row,append_board,player_board):
         """
         print(c_ship_row)
         print(c_ship_col)
+        if (p_ship_row < 0 or p_ship_row > 9) or (p_ship_col < 0 or p_ship_row > 9):
+            print("That's not on the grid captain.")
+        else:
+            player_board[p_ship_row][p_ship_col] = "*"
+        print("p_ship_row")
+        print("p_ship_row")
         print("Computers board")
         append_board(board)
         print("Player board")
@@ -103,6 +113,17 @@ def main(board,c_ship_col,c_ship_row,append_board,player_board):
         row_guess = int(input("Guess the row:  \n"))
         col_guess = int(input("Guess the column:  \n"))
         print(f"Coordinates are ({row_guess},{col_guess}) Fire at will!")
+
+        def c_row_coordinate(player_board):
+            return round(randint(0, len(player_board)-1))
+        def c_col_coordinate(player_board):
+            return randint(0, len(player_board[0])-1)
+
+        c_row_coordinate(player_board)
+        c_col_coordinate(player_board)
+
+        com_guess_row = c_row_coordinate(player_board)
+        com_guess_col = c_col_coordinate(player_board)
 
         if (row_guess < 0 or row_guess > 9) or (col_guess < 0 or col_guess > 9):
                 print("Thats not on the radar captain.")
