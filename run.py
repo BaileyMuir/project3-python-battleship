@@ -7,6 +7,7 @@ the game will fix inside.
 """
 
 board = []
+player_board = []
 
 """
 Here is a for loop that first goes through
@@ -60,6 +61,17 @@ c_ship_row = random_row_coordinate(board)
 c_ship_col = random_column_coordinate(board)
 
 """
+Create grid for player
+"""
+
+for i in range(10):
+    player_board.append(["~"] * 10)
+
+def append_p_board(player_board):
+    for grids in player_board:
+        print(" ".join(grids))
+
+"""
 This for loop goes through a range of 100
 hundred as there are 100 potential places
 for the ship to appear in, As a result
@@ -72,7 +84,7 @@ beaten end the game.
 For testing its been reduced to ten for now.
 """
 
-def main(board,c_ship_col,c_ship_row,append_board):
+def main(board,c_ship_col,c_ship_row,append_board,player_board):
     for attempt in range(10):
         print("attempt", attempt + 1)
 
@@ -86,6 +98,8 @@ def main(board,c_ship_col,c_ship_row,append_board):
         print(c_ship_col)
         print("Computers board")
         append_board(board)
+        print("Player board")
+        append_p_board(board)
         row_guess = int(input("Guess the row:  \n"))
         col_guess = int(input("Guess the column:  \n"))
         print(f"Coordinates are ({row_guess},{col_guess}) Fire at will!")
@@ -104,4 +118,4 @@ def main(board,c_ship_col,c_ship_row,append_board):
                 print ("sector was empty.")
                 board[row_guess][col_guess] = "X"
 
-main(board,c_ship_col,c_ship_row,append_board)
+main(board,c_ship_col,c_ship_row,append_board,player_board)
