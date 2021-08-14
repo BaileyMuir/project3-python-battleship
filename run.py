@@ -86,12 +86,18 @@ For testing its been reduced to ten for now.
 
 def main(board,c_ship_col,c_ship_row,append_board,player_board):
 
-    p_ship_row = int(input("Pick ship row:  \n"))
-    p_ship_col = int(input("Pick ship row:  \n"))
-
+    p_ship_row = int(input("pick ship row:  \n"))
+    p_ship_col = int(input("pick ship column:  \n"))
+    if (p_ship_row < 0 or p_ship_row > 9) or (p_ship_col < 0 or p_ship_row > 9):
+        print("That's not on the grid captain.")
+        print("must be between (0-9)")
+        p_ship_row = int(input("pick ship row between (0-9):  \n"))
+        p_ship_col = int(input("pick ship column between (0-9):  \n"))
+    else:
+        player_board[p_ship_row][p_ship_col] = "#"
+        
     for attempt in range(10):
         print("attempt", attempt + 1)
-
         """
         Below are two variable both of which
         allow the user to make there guess
@@ -100,31 +106,27 @@ def main(board,c_ship_col,c_ship_row,append_board,player_board):
         """
         print(c_ship_row)
         print(c_ship_col)
-        if (p_ship_row < 0 or p_ship_row > 9) or (p_ship_col < 0 or p_ship_row > 9):
-            print("That's not on the grid captain.")
-        else:
-            player_board[p_ship_row][p_ship_col] = "*"
-        print("p_ship_row")
-        print("p_ship_row")
-        print("Computers board")
-        append_board(board)
-        print("Player board")
-        append_p_board(board)
+            
+        print(p_ship_row)
+        print(p_ship_col)
+        # print("Computers board")
+        # append_board(board)
+        # print("Players board")
+        # append_p_board(player_board)
         row_guess = int(input("Guess the row:  \n"))
         col_guess = int(input("Guess the column:  \n"))
         print(f"Coordinates are ({row_guess},{col_guess}) Fire at will!")
-
+        
         def c_row_coordinate(player_board):
-            return round(randint(0, len(player_board)-1))
-        def c_col_coordinate(player_board):
-            return randint(0, len(player_board[0])-1)
-
+            return round(randint(0, len(board)-1))
+        def c_column_coordinate(player_board):
+            return randint(0, len(board[0])-1)
         c_row_coordinate(player_board)
-        c_col_coordinate(player_board)
-
+        c_column_coordinate(player_board)
+        
         com_guess_row = c_row_coordinate(player_board)
-        com_guess_col = c_col_coordinate(player_board)
-
+        com_guess_col = c_column_coordinate(player_board)
+        
         if (row_guess < 0 or row_guess > 9) or (col_guess < 0 or col_guess > 9):
                 print("Thats not on the radar captain.")
         elif (board[row_guess][col_guess] == "!"):
@@ -133,10 +135,25 @@ def main(board,c_ship_col,c_ship_row,append_board,player_board):
             print("Target destroyed.")
             board[row_guess][col_guess] = "!"
         else:
-            if (board[row_guess][col_guess] == "X"):
+            if (row_guess < 0 or row_guess > 9) or (col_guess < 0 or col_guess > 9):
+                print("That's not on the grid captain.")
+            elif(board[row_guess][col_guess] == "X"):
                 print("Captain that sector has already been targeted.")
             else:
                 print ("sector was empty.")
                 board[row_guess][col_guess] = "X"
+                
+        if com_guess_row == p_ship_row and com_guess_col == p_ship_col:
+            player_board[com_guess_row][com_guess_col] = "!"
+            print("Computer destroyed one of your vessles Captain.")
+        else:
+            player_board[com_guess_row][com_guess_col] = "X"
+            print("Enemy has missed our vessles Captain.")
+
+        print("Computers board")
+        append_board(board)
+        print("Players board")
+        append_p_board(player_board)
+
 
 main(board,c_ship_col,c_ship_row,append_board,player_board)
