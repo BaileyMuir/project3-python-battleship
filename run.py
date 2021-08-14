@@ -21,7 +21,7 @@ board variable fromshowing up when
 the grid is printed.
 """
 
-for x in range(0, 10):
+for x in range(10):
     board.append(["~"] * 10)
 
 
@@ -84,25 +84,24 @@ def main(board,c_ship_col,c_ship_row,append_board):
         """
         print(c_ship_row)
         print(c_ship_col)
+        print("Computers board")
+        append_board(board)
         row_guess = int(input("Guess the row:  \n"))
         col_guess = int(input("Guess the column:  \n"))
         print(f"Coordinates are ({row_guess},{col_guess}) Fire at will!")
 
-        if (board[row_guess][col_guess] == "!"):
-            print("Captain that ship has vessle has already been destroyed.")
+        if (row_guess < 0 or row_guess > 9) or (col_guess < 0 or col_guess > 9):
+                print("Thats not on the radar captain.")
+        elif (board[row_guess][col_guess] == "!"):
+            print("Captain that vessle has already been destroyed.")
         elif row_guess == c_ship_row and col_guess == c_ship_col:
             print("Target destroyed.")
             board[row_guess][col_guess] = "!"
         else:
-            if (row_guess < 0 or row_guess > 9) or (col_guess < 0 or col_guess > 9):
-                print("Thats not on the grid captain.")
-            elif(board[row_guess][col_guess] == "X"):
+            if (board[row_guess][col_guess] == "X"):
                 print("Captain that sector has already been targeted.")
             else:
                 print ("sector was empty.")
                 board[row_guess][col_guess] = "X"
-
-print("Computers board")
-append_board(board)
 
 main(board,c_ship_col,c_ship_row,append_board)
