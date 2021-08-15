@@ -15,7 +15,8 @@ def start_game():
     print("1) the aim of the game is to destroy your\n opponets ships")
     print("2) each row uses a coordinate system of (0,9)\n there are ten rows")
     print("3) all imputs must be between(0,9) for both\n row and column")
-    print("4) enjoy yourself")
+    print("4) water is represented by ~, misses are \nrepresented by X, hits are represented by !\nand your ship is represented by #")
+    print("5) enjoy yourself")
     
 start_game()
 
