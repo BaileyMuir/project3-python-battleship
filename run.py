@@ -89,6 +89,9 @@ For testing its been reduced to ten for now.
 
 def main(board, c_ship_col, c_ship_row, append_board, player_board):
 
+    p_ship_destroyed = 0
+    c_ship_destroyed = 0
+
     p_ship_row = int(input("pick ship row:  \n"))
     p_ship_col = int(input("pick ship column:  \n"))
     if (p_ship_row < 0 or p_ship_row > 9) or (p_ship_col < 0 or p_ship_row > 9):
@@ -100,9 +103,6 @@ def main(board, c_ship_col, c_ship_row, append_board, player_board):
         player_board[p_ship_row][p_ship_col] = "#"
 
     for attempt in range(10):
-
-        p_ship_destroyed = 0
-        c_ship_destroyed = 0
 
         print("attempt", attempt + 1)
         """
@@ -165,7 +165,7 @@ def main(board, c_ship_col, c_ship_row, append_board, player_board):
         print("Players board")
         append_p_board(player_board)
 
-        if attemp == 10:
+        if attempt == 10:
             print("Game over, our torpedos have run out.")
             break
         else:
