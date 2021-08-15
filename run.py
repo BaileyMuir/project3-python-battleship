@@ -9,6 +9,16 @@ the game will fix inside.
 board = []
 player_board = []
 
+def start_game():
+    print("Welcome to Battleship")
+    print("the rules are as followed")
+    print("1) the aim of the game is to destroy your\n opponets ships")
+    print("2) each row uses a coordinate system of (0,9)\n there are ten rows")
+    print("3) all imputs must be between(0,9) for both\n row and column")
+    print("4) enjoy yourself")
+    
+start_game()
+
 """
 Here is a for loop that first goes through
 the process of producing a row of 10 inside
@@ -92,6 +102,8 @@ def main(board, c_ship_col, c_ship_row, append_board, player_board):
     p_ship_destroyed = 0
     c_ship_destroyed = 0
 
+    player_name = input("what is your name:")
+
     p_ship_row = int(input("pick ship row:  \n"))
     p_ship_col = int(input("pick ship column:  \n"))
     if (p_ship_row < 0 or p_ship_row > 9) or (p_ship_col < 0 or p_ship_row > 9):
@@ -111,11 +123,11 @@ def main(board, c_ship_col, c_ship_row, append_board, player_board):
         using input to avoid errors i will add
         custom error messages in future.
         """
-        print(c_ship_row)
-        print(c_ship_col)
+        
+        print(f"{c_ship_row},{c_ship_col}")
 
-        print(p_ship_row)
-        print(p_ship_col)
+        print(f"{p_ship_row},{p_ship_col}")
+        
         # print("Computers board")
         # append_board(board)
         # print("Players board")
@@ -162,7 +174,7 @@ def main(board, c_ship_col, c_ship_row, append_board, player_board):
 
         print("Computers board")
         append_board(board)
-        print("Players board")
+        print(f"{player_name} board")
         append_p_board(player_board)
 
         if attempt == 10:
