@@ -100,6 +100,10 @@ def main(board, c_ship_col, c_ship_row, append_board, player_board):
         player_board[p_ship_row][p_ship_col] = "#"
 
     for attempt in range(10):
+
+        p_ship_destroyed = 0
+        c_ship_destroyed = 0
+
         print("attempt", attempt + 1)
         """
         Below are two variable both of which
@@ -138,6 +142,7 @@ def main(board, c_ship_col, c_ship_row, append_board, player_board):
         elif row_guess == c_ship_row and col_guess == c_ship_col:
             print("Target destroyed.")
             board[row_guess][col_guess] = "!"
+            c_ship_destroyed += 1
         else:
             if (row_guess < 0 or row_guess > 9) or (col_guess < 0 or col_guess > 9):
                 print("That's not on the grid captain.")
@@ -150,6 +155,7 @@ def main(board, c_ship_col, c_ship_row, append_board, player_board):
         if com_guess_row == p_ship_row and com_guess_col == p_ship_col:
             player_board[com_guess_row][com_guess_col] = "!"
             print("Computer destroyed one of your vessles Captain.")
+            p_ship_destroyed += 1
         else:
             player_board[com_guess_row][com_guess_col] = "X"
             print("Enemy has missed our vessles Captain.")
@@ -158,6 +164,20 @@ def main(board, c_ship_col, c_ship_row, append_board, player_board):
         append_board(board)
         print("Players board")
         append_p_board(player_board)
+
+        if attemp == 10:
+            print("Game over, our torpedos have run out.")
+            break
+        else:
+            print("Loading torpedos.")
+
+        if c_ship_destroyed == 1:
+            print("you win all enemy vessles have been destroyed")
+            break
+
+        if p_ship_destroyed == 1:
+            print("Game over, all our vessles have been destroyed")
+            break
 
 
 main(board, c_ship_col, c_ship_row, append_board, player_board)
