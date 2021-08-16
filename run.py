@@ -14,7 +14,7 @@ def start_game():
     print("the rules are as followed")
     print("1) the aim of the game is to destroy your\n opponets ships")
     print("2) each row uses a coordinate system of (0,9)\n there are ten rows")
-    print("3) all imputs must be between(0,9) for both\n row and column")
+    print("3) all imputs must be between(0,7) for both\n row and column")
     print("4) water is represented by ~, misses are \nrepresented by X, hits are represented by !\nand your ship is represented by #")
     print("5) enjoy yourself")
     
@@ -126,7 +126,7 @@ def main(board, c_ship_col, c_ship_row, append_board, player_board):
         custom error messages in future.
         """
         
-        print(f"{c_ship_row},{c_ship_col}")
+        # print(f"{c_ship_row},{c_ship_col}")
 
         row_guess = int(input("Guess the row:  \n"))
         col_guess = int(input("Guess the column:  \n"))
@@ -188,6 +188,4 @@ def main(board, c_ship_col, c_ship_row, append_board, player_board):
             print("Game over, all our vessles have been destroyed")
             break
 
-
-        input("ready to continue:   \n")
 main(board, c_ship_col, c_ship_row, append_board, player_board)
