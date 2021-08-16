@@ -104,7 +104,7 @@ def main(board, c_ship_col, c_ship_row, append_board, player_board):
     p_ship_destroyed = 0
     c_ship_destroyed = 0
 
-    player_name = input("what is your name:")
+    player_name = input("what is your name:   \n")
     print(f"Welcome {player_name}.")
 
     p_ship_row = int(input("pick ship row:  \n"))
