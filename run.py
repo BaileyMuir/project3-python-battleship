@@ -128,11 +128,6 @@ def main(board, c_ship_col, c_ship_row, append_board, player_board):
         print(f"{c_ship_row},{c_ship_col}")
 
         print(f"{p_ship_row},{p_ship_col}")
-        
-        # print("Computers board")
-        # append_board(board)
-        # print("Players board")
-        # append_p_board(player_board)
         row_guess = int(input("Guess the row:  \n"))
         col_guess = int(input("Guess the column:  \n"))
         print(f"Coordinates are ({row_guess},{col_guess}) Fire at will!")
