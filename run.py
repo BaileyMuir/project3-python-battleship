@@ -10,20 +10,21 @@ board = []
 player_board = []
 
 def start_game():
-    print("Welcome to Battleship")
-    print("the rules are as followed")
-    print("1) the aim of the game is to destroy your\n opponets ships")
-    print("2) each row uses a coordinate system of (0,9)\n there are ten rows")
-    print("3) all imputs must be between(0,7) for both\n row and column")
-    print("4) water is represented by ~, misses are \nrepresented by X, hits are represented by !\nand your ship is represented by #")
-    print("5) enjoy yourself")
+    print("Welcome to Battleship.")
+    print("The rules are as followed.")
+    print("1) The aim of the game is to destroy your\n opponets ships.")
+    print("2) Each row uses a coordinate system of (0,9)\n there are ten rows.")
+    print("3) All imputs must be between(0,7) for both\n row and column starting at (0, 0).")
+    print("4) Water is represented by ~, misses are \nrepresented by X, hits are represented by !\nand your ship is represented by #")
+    print("5) You have 50 attempts to find the other \nship before the game ends.") 
+    print("5) Enjoy yourself.")
     
 start_game()
 
 """
 Here is a for loop that first goes through
 the process of producing a row of 10 inside
- of our board variable, inside which it will
+of our board variable, inside which it will
 place "~" to represent the waves in the game
 and produce 10 columns.
 
