@@ -116,7 +116,7 @@ def main(board, c_ship_col, c_ship_row, append_board, player_board):
     else:
         player_board[p_ship_row][p_ship_col] = "#"
 
-    for attempt in range(10):
+    for attempt in range(50):
 
         print("attempt", attempt + 1)
         """
@@ -174,7 +174,7 @@ def main(board, c_ship_col, c_ship_row, append_board, player_board):
         print(f"{player_name} board")
         append_p_board(player_board)
 
-        if attempt == 9:
+        if attempt == 49:
             print("Game over, our torpedos have run out.")
             break
         else:
