@@ -33,8 +33,8 @@ board variable fromshowing up when
 the grid is printed.
 """
 
-for x in range(10):
-    board.append(["~"] * 10)
+for x in range(8):
+    board.append(["~"] * 8)
 
 
 def append_board(board):
@@ -75,8 +75,8 @@ c_ship_col = random_column_coordinate(board)
 Create grid for player
 """
 
-for i in range(10):
-    player_board.append(["~"] * 10)
+for i in range(8):
+    player_board.append(["~"] * 8)
 
 
 def append_p_board(player_board):
@@ -108,11 +108,11 @@ def main(board, c_ship_col, c_ship_row, append_board, player_board):
 
     p_ship_row = int(input("pick ship row:  \n"))
     p_ship_col = int(input("pick ship column:  \n"))
-    if (p_ship_row < 0 or p_ship_row > 9) or (p_ship_col < 0 or p_ship_row > 9):
+    if (p_ship_row < 0 or p_ship_row > 7) or (p_ship_col < 0 or p_ship_row > 7):
         print("That's not on the grid captain.")
-        print("must be between (0-9)")
-        p_ship_row = int(input("pick ship row between (0-9):  \n"))
-        p_ship_col = int(input("pick ship column between (0-9):  \n"))
+        print("must be between (0-7)")
+        p_ship_row = int(input("pick ship row between (0-7):  \n"))
+        p_ship_col = int(input("pick ship column between (0-7):  \n"))
     else:
         player_board[p_ship_row][p_ship_col] = "#"
 
@@ -143,7 +143,7 @@ def main(board, c_ship_col, c_ship_row, append_board, player_board):
         com_guess_row = c_row_coordinate(player_board)
         com_guess_col = c_column_coordinate(player_board)
 
-        if (row_guess < 0 or row_guess > 9) or (col_guess < 0 or col_guess > 9):
+        if (row_guess < 0 or row_guess > 7) or (col_guess < 0 or col_guess > 7):
                 print("Thats not on the radar captain.")
         elif (board[row_guess][col_guess] == "!"):
             print("Captain that vessle has already been destroyed.")
@@ -152,7 +152,7 @@ def main(board, c_ship_col, c_ship_row, append_board, player_board):
             board[row_guess][col_guess] = "!"
             c_ship_destroyed += 1
         else:
-            if (row_guess < 0 or row_guess > 9) or (col_guess < 0 or col_guess > 9):
+            if (row_guess < 0 or row_guess > 7) or (col_guess < 0 or col_guess > 7):
                 print("That's not on the grid captain.")
             elif(board[row_guess][col_guess] == "X"):
                 print("Captain that sector has already been targeted.")
