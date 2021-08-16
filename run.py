@@ -17,6 +17,7 @@ def start_game():
     print("3) all imputs must be between(0,9) for both\n row and column")
     print("4) water is represented by ~, misses are \nrepresented by X, hits are represented by !\nand your ship is represented by #")
     print("5) enjoy yourself")
+    print("please puch any key to continue.")
     
 start_game()
 
@@ -104,6 +105,7 @@ def main(board, c_ship_col, c_ship_row, append_board, player_board):
     c_ship_destroyed = 0
 
     player_name = input("what is your name:")
+    print(f"Welcome {player_name}.")
 
     p_ship_row = int(input("pick ship row:  \n"))
     p_ship_col = int(input("pick ship column:  \n"))
@@ -173,7 +175,7 @@ def main(board, c_ship_col, c_ship_row, append_board, player_board):
         print(f"{player_name} board")
         append_p_board(player_board)
 
-        if attempt == 10:
+        if attempt == 9:
             print("Game over, our torpedos have run out.")
             break
         else:
