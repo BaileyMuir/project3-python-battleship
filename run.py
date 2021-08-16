@@ -17,7 +17,6 @@ def start_game():
     print("3) all imputs must be between(0,9) for both\n row and column")
     print("4) water is represented by ~, misses are \nrepresented by X, hits are represented by !\nand your ship is represented by #")
     print("5) enjoy yourself")
-    print("please puch any key to continue.")
     
 start_game()
 
@@ -129,7 +128,6 @@ def main(board, c_ship_col, c_ship_row, append_board, player_board):
         
         print(f"{c_ship_row},{c_ship_col}")
 
-        print(f"{p_ship_row},{p_ship_col}")
         row_guess = int(input("Guess the row:  \n"))
         col_guess = int(input("Guess the column:  \n"))
         print(f"Coordinates are ({row_guess},{col_guess}) Fire at will!")
@@ -170,6 +168,7 @@ def main(board, c_ship_col, c_ship_row, append_board, player_board):
             player_board[com_guess_row][com_guess_col] = "X"
             print("Enemy has missed our vessles Captain.")
 
+        
         print("Computers board")
         append_board(board)
         print(f"{player_name} board")
@@ -190,4 +189,5 @@ def main(board, c_ship_col, c_ship_row, append_board, player_board):
             break
 
 
+        input("ready to continue:   \n")
 main(board, c_ship_col, c_ship_row, append_board, player_board)
