@@ -15,6 +15,7 @@ Each turns the game board, and accompanying text is printed to the terminals.
 
 ## Deployed game on Heroku
 The game is located <a href="https://battleship-p3.herokuapp.com/" target="_blank" rel="noopener">here</a>. Or right click on link to open in a new tab.
+![deployed](https://github.com/BaileyMuir/project3-python-battleship/blob/main/assets/images/deployed.jpeg.png)
 
 ## features
 
