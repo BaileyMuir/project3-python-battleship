@@ -85,6 +85,7 @@ The only other error that happened was the code-breaking. I fixed this by rearra
 ## remaining bugs
 
 One issue with my code is the length of their lines, as a few go over the recommended count.
+![Bugs]()
 
 ## Validator used
 
@@ -106,3 +107,9 @@ Log in to GitHub and click on the repository to download the file. Click the cod
 
 ## credits
 code institutes mock terminal and template.
+
+insperation - https://www.youtube.com/watch?v=MgJBgnsDcF0&t=691s
+
+https://stackoverflow.com/questions/41910947/how-do-i-make-a-grid-in-python helped create the grids.
+
+https://stackoverflow.com/questions/14985798/python-random-function/14985863 - helped me find out about randint allowing me to produce random numbers.
