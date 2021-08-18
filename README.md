@@ -98,5 +98,11 @@ The project is deployed on GitHub Pages, and I used Gitpod to develop my assignm
 Log in to GitHub and click on the repository to download the file. Click the code button next to the green Gitpod button and press download ZIP; this will download all files in this repository and is easier than using the link it provides you to download.
 
 ## hosting to Heroku
+- First log into Heroku or create an account
+- Add a new app.
+- Add the python then NodesJs buildpacks in that order.
+- Here I used automatic to update with my code and pressed manuel to create the enviorment it displays on.
+- Test it works.
 
 ## credits
+code institutes mock terminal and template.
