@@ -66,6 +66,7 @@ I added several end functions, such as if the range reaches its limit, the game 
 Pep8 to make sure my code was structured correctly and there were no issues in the code itself.
 Python tutor was helpful during development. It allowed me to see when code was executed and where problems were found.
 Github terminal allowed me to test my code by typing first python3 run.py. This allowed me to test my code in the terminal before making any permanent changes.
+![pythontutor](https://github.com/BaileyMuir/project3-python-battleship/blob/main/assets/images/pythontutor.jpeg.png)
 
 ## bugs
 one bug I had was that if the player placed something outside of the grid, this was amended by using an if/else statement that makes sure the input is not less than 0 or more than 9.
@@ -85,7 +86,7 @@ The only other error that happened was the code-breaking. I fixed this by rearra
 ## remaining bugs
 
 One issue with my code is the length of their lines, as a few go over the recommended count.
-![Bugs]()
+![Bugs](https://github.com/BaileyMuir/project3-python-battleship/blob/main/assets/images/error.jpeg.png)
 
 ## Validator used
 
