@@ -249,16 +249,19 @@ def main(board, c_ship_col, c_ship_row, append_board, player_board):
 
         if attempt == 49:
             print("Game over, our torpedos have run out.")
+            print("To play again, press run program \nbutton above terminal.")
             break
         else:
             print("Loading torpedos.")
 
         if c_ship_destroyed == 1:
-            print("you win all enemy vessles have been destroyed")
+            print("you win all enemy vessles have been destroyed.")
+            print("To play again, press run program \nbutton above terminal.")
             break
 
         if p_ship_destroyed == 1:
-            print("Game over, all our vessles have been destroyed")
+            print("Game over, all our vessles have been destroyed.")
+            print("To play again, press run program \nbutton above terminal.")
             break
 
 main(board, c_ship_col, c_ship_row, append_board, player_board)
