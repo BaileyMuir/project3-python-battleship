@@ -6,7 +6,7 @@ Created an empty variable for the board
 which the water and other contents of
 the game will fix inside.
 
-The Player board works the same but will 
+The Player board works the same but will
 hold another value of # representing their ship.
 """
 
@@ -19,6 +19,7 @@ rules before you start to play in case they have never played
 battleship before. To do this, I have used simple print statements.
 """
 
+
 def start_game():
     print("Welcome to Battleship.")
     print("The rules are as followed.")
@@ -26,9 +27,9 @@ def start_game():
     print("2) Each row uses a coordinate system of (0,9)\n there are ten rows.")
     print("3) All imputs must be between(0,7) for both\n row and column starting at (0, 0).")
     print("4) Water is represented by ~, misses are \nrepresented by X, hits are represented by !\nand your ship is represented by #")
-    print("5) You have 50 attempts to find the other \nship before the game ends.") 
+    print("5) You have 50 attempts to find the other \nship before the game ends.")
     print("5) Enjoy yourself.")
-    
+
 start_game()
 
 """
@@ -59,6 +60,7 @@ The functions below selects a random location on the
 grid stating at 0 and covering the length of the grid
 8 to amend it back to 7 I have the -1.
 """
+
 
 def random_row_coordinate(board):
     return round(randint(0, len(board)-1))
@@ -144,7 +146,7 @@ def main(board, c_ship_col, c_ship_row, append_board, player_board):
 
     """
     for attempt in range(50):
-    allows the functions to each 
+    allows the functions to each
     execute a set amount of times,
     in this case, 50 before it stops.
     It's also to make the game harder
@@ -154,11 +156,11 @@ def main(board, c_ship_col, c_ship_row, append_board, player_board):
     for attempt in range(50):
 
         print("attempt", attempt + 1)
-        
+
         """
         Below are two variables, both of which
         allow the user to make their guess
-        using input and prints a message of 
+        using input and prints a message of
         where they have selected on the grid.
         """
 
@@ -190,7 +192,7 @@ def main(board, c_ship_col, c_ship_row, append_board, player_board):
         to make sure they fit a set of parameters,
         print the correct corresponding message,
         and update the boards appropriately.
-        
+
         If they hit a ship, the use of -= 1 removes
         1 from the number of ships the player or
         computer has.
@@ -241,7 +243,7 @@ def main(board, c_ship_col, c_ship_row, append_board, player_board):
         I have incorporated the break function to
         stop the code from running after that
         parameter is reached.
-        
+
         The attempts must equal 49 and not 50
         because the computer starts its count
         from 0.
